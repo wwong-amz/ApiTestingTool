@@ -1,12 +1,9 @@
 // DOTENV
 require('dotenv').config();
 
-// FETCH FUNCTIONS
-const getApi = require('./operations/GetApi');
-const queryApi = require('./operations/QueryApi');
-const createApi = require('./operations/CreateApi');
-const updateApi = require('./operations/UpdateApi');
-const deleteApi = require('./operations/DeleteApi');
+// FETCH FUNCTION
+const fetchWrapper = require('./operations/FetchWrapper');
+
 
 // ENVIRONMENT VARIABLES
 const STAGE = process.env.STAGE;
@@ -28,11 +25,11 @@ const BASE_URL = `https://${API_ID_TEST}.execute-api.${AWS_REGION}.amazonaws.com
 
 
 function invokeOperations (apiKey) {
-  getApi(apiKey, BASE_URL, TEST_ITEM_ID);
-  deleteApi(apiKey, BASE_URL, DELETE_STRING);
-  queryApi(apiKey, BASE_URL, QUERY_STRING);
-  createApi(apiKey, BASE_URL, CREATE_ENDPOINT, CREATE_REQUEST_BODY);
-  updateApi(apiKey, BASE_URL, UPDATE_ENDPOINT, UPDATE_REQUEST_BODY);
+  fetchWrapper(apiKey, BASE_URL, TEST_ITEM_ID, 'GET');
+  fetchWrapper(apiKey,BASE_URL, DELETE_STRING, 'DELETE');
+  fetchWrapper(apiKey, BASE_URL, QUERY_STRING, 'GET');
+  fetchWrapper(apiKey, BASE_URL, CREATE_ENDPOINT, 'POST', CREATE_REQUEST_BODY);
+  fetchWrapper(apiKey, BASE_URL, UPDATE_ENDPOINT, 'PUT', UPDATE_REQUEST_BODY)
 }
 
 invokeOperations(API_KEY_TEST);
