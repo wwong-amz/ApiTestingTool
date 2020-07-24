@@ -5,7 +5,7 @@ function fetchWrapper(apiKey, baseUrl, endpoint, method, body) {
   const url = baseUrl + endpoint;
   const apiOptions = apiOptionsFactory(apiKey, method, body);
 
-  fetchBase(url, apiOptions);
+  return fetchBase(url, apiOptions);
 }
 
 module.exports = fetchWrapper;

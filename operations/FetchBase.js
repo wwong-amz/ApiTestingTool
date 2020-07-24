@@ -1,9 +1,8 @@
 const fetch = require('node-fetch');
 
 function fetchBase (url, apiOptions) {
-  fetch(url, apiOptions)
-  .then(res => res.json())
-  .then(json => console.log(`${apiOptions.method}`, json))
+  return fetch(url, apiOptions)
+  .then(res => res.status)
 }
 
 module.exports = fetchBase;
