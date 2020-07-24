@@ -13,7 +13,7 @@ Clone down the repo and do a npm install
 Create a .env file and populate the file with your api id, api key, aws region, and stage name
 
 #### Step 3
-Make necessary changes to the constants in index.js
+Make necessary changes to the constants and the wrapper function in index.js
 
 #### Step 4 
 Use 'npm run test' to invoke the wrapper function
