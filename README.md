@@ -1,10 +1,10 @@
 # ApiTestingTool
 
-### Notes:
+### Goal:
 The purpose of this tool is to test the status code that we get back from AWS Api Gateway matches the correct HTTP status code
 
 
-##To run the ApiTestingTool follow the instructions below:
+####To run the ApiTestingTool follow the instructions below:
 
 ### Step 1
 Clone down the repo and do a npm install
